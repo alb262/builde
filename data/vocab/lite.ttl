@@ -79,282 +79,371 @@ lite:Concept a rdfs:Class ;
     rdfs:comment "Term describing the subject, aboutness, idea or notion of a resource."@en,
                  "Término que describe el tema, aboutness, idea o concepto de un recurso."@es ;
     rdfs:subClassOf skos:Concept .
-
 lite:Authority a rdfs:Class ;
-    rdfs:label "Authority"@en ;
-    rdfs:comment "Credible, curated description of a person, place or thing."@es ;
+    rdfs:label "Authority"@en ,
+               "Autoridad"@es ;
+    rdfs:comment "Credible, curated description of a person, place or thing."@en ,
+                 "Descripción creíble y curada de una persona, lugar o cosa."@es ;
     rdfs:subClassOf lite:Resource .
 
 lite:Topic a rdfs:Class ;
-    rdfs:label "Topic"@en ;
-    rdfs:comment "Subject term describing a general concept, event or object."@en ;
+    rdfs:label "Topic"@en ,
+               "Tema"@es ;
+    rdfs:comment "Subject term describing a general concept, event or object."@en ,
+                 "Término que describe un concepto, evento u objeto general."@es ;
     owl:sameAs bf:Topic ;
     rdfs:subClassOf lite:Authority .
 
 lite:Temporal a rdfs:Class ;
-    rdfs:label "Temporal"@en ;
-    rdfs:comment "Used to denote context for the chronological continued progress of existence and events in the past, present, and future."@en ;
+    rdfs:label "Temporal"@en ,
+               "Temporal"@es ;
+    rdfs:comment "Used to denote context for the chronological continued progress of existence and events in the past, present, and future."@en ,
+                 "Utilizado para denotar el contexto del progreso cronológico continuo de la existencia y los acontecimientos en el pasado, presente y futuro."@es ;
     rdfs:subClassOf lite:Authority .
 
 lite:Place a rdfs:Class ;
-    rdfs:label "Place"@en ;
-    rdfs:comment "Geographic location."@en ;
+    rdfs:label "Place"@en ,
+               "Lugar"@es ;
+    rdfs:comment "Geographic location."@en ,
+                 "Ubicación geográfica."@es ;
     owl:sameAs schema:Place , bf:Place ;
     rdfs:subClassOf lite:Authority .
 
 lite:Agent a rdfs:Class ;
-    rdfs:label "Agent"@en ;
-    rdfs:comment "Entity (e.g. person, organization, etc.) associated with a resource."@en ;
+    rdfs:label "Agent"@en ,
+               "Agente"@es ;
+    rdfs:comment "Entity (e.g. person, organization, etc.) associated with a resource."@en ,
+                 "Entidad (por ejemplo, persona, organización, etc.) asociada a un recurso."@es ;
     owl:sameAs bf:Agent ;
     rdfs:subClassOf lite:Authority .
 
 lite:Meeting a rdfs:Class ;
-    rdfs:label "Meeting"@en ;
-    rdfs:comment "Formal gathering of people for a particular purpose."@en ;
+    rdfs:label "Meeting"@en ,
+               "Reunión"@es ;
+    rdfs:comment "Formal gathering of people for a particular purpose."@en ,
+                 "Reunión formal de personas con un propósito específico."@es ;
     owl:sameAs bf:Meeting ;
     rdfs:subClassOf lite:Agent .
 
 lite:Organization a rdfs:Class ;
-    rdfs:label "Organization"@en ;
-    rdfs:comment "Unit of people, e.g., an institution, an association, or corporate body."@en ;
+    rdfs:label "Organization"@en ,
+               "Organización"@es ;
+    rdfs:comment "Unit of people, e.g., an institution, an association, or corporate body."@en ,
+                 "Unidad de personas, por ejemplo, una institución, una asociación o una entidad corporativa."@es ;
     owl:sameAs bf:Organization ;
     rdfs:subClassOf lite:Agent .
 
 lite:Family a rdfs:Class ;
-    rdfs:label "Family"@en ;
-    rdfs:comment "Social unit related by birth, marriage, adoption, civil union, or similar relationship."@en ;
+    rdfs:label "Family"@en ,
+               "Familia"@es ;
+    rdfs:comment "Social unit related by birth, marriage, adoption, civil union, or similar relationship."@en ,
+                 "Unidad social relacionada por nacimiento, matrimonio, adopción, unión civil o una relación similar."@es ;
     owl:sameAs bf:Family ;
     rdfs:subClassOf lite:Agent .
 
 lite:Person a rdfs:Class ;
-    rdfs:label "Person"@en ;
-    rdfs:comment "Individual (alive, dead, undead, or fictional) in relation to a resource."@en ;
+    rdfs:label "Person"@en ,
+               "Persona"@es ;
+    rdfs:comment "Individual (alive, dead, undead, or fictional) in relation to a resource."@en ,
+                 "Individuo (vivo, muerto, no muerto o ficticio) en relación con un recurso."@es ;
     owl:sameAs bf:Person , foaf:Person , schema:Person ;
     rdfs:subClassOf lite:Agent .
 
 lite:Library a rdfs:Class ;
-    rdfs:label "Library"@en ;
-    rdfs:comment "Organization responsible for the care of a collection of literary, musical, artistic, or reference materials, such as books, manuscripts, recordings, or films."@en ;
+    rdfs:label "Library"@en ,
+               "Biblioteca"@es ;
+    rdfs:comment "Organization responsible for the care of a collection of literary, musical, artistic, or reference materials, such as books, manuscripts, recordings, or films."@en ,
+                 "Organización responsable del cuidado de una colección de materiales literarios, musicales, artísticos o de referencia, como libros, manuscritos, grabaciones o películas."@es ;
     owl:sameAs schema:Library ;
     rdfs:subClassOf lite:Organization .
 
 lite:Museum a rdfs:Class ;
-    rdfs:label "Museum"@en ;
-    rdfs:comment "Organization that holds artifacts and other objects of scientific, artistic, cultural, historical, or other importance."@en ;
+    rdfs:label "Museum"@en ,
+               "Museo"@es ;
+    rdfs:comment "Organization that holds artifacts and other objects of scientific, artistic, cultural, historical, or other importance."@en ,
+                 "Organización que conserva artefactos y otros objetos de importancia científica, artística, cultural, histórica u otra."@es ;
     owl:sameAs schema:Museum ;
     rdfs:subClassOf lite:Organization .
 
 lite:Archive a rdfs:Class ;
-    rdfs:label "Archive"@en ;
-    rdfs:comment "Organization responsible for the documents, photos, rare books, and artifacts selected for access and preservation."@en ;
+    rdfs:label "Archive"@en ,
+               "Archivo"@es ;
+    rdfs:comment "Organization responsible for the documents, photos, rare books, and artifacts selected for access and preservation."@en ,
+                 "Organización responsable de los documentos, fotografías, libros raros y artefactos seleccionados para su acceso y preservación."@es ;
     owl:sameAs schema:ArchiveOrganization ;
     rdfs:subClassOf lite:Organization .
 
 lite:Identifier a rdfs:Class ;
-    rdfs:label "Identifier"@en ;
-    rdfs:comment "A string or number that identifies either a unique resource or class of resources."@en ;
-    skos:note "Example identifiers include ISBN, ISSN, and MESH."@en ;
+    rdfs:label "Identifier"@en ,
+               "Identificador"@es ;
+    rdfs:comment "A string or number that identifies either a unique resource or class of resources."@en ,
+                 "Una cadena alfanumérica, o número que identifica un recurso único o una clase de recursos."@es ;
+    skos:note "Example identifiers include ISBN, ISSN, and MESH."@en ,
+              "Ejemplos de identificadores incluyen ISBN, ISSN y MESH."@es ;
     owl:sameAs bf:Identifier ;
     rdfs:subClassOf lite:Resource .
 
 lite:Annotation a rdfs:Class ;
-    rdfs:label "Annotation"@en ;
-    rdfs:comment "Annotation, provides for loosely attached information about a resource"@en ;
+    rdfs:label "Annotation"@en ,
+               "Anotación"@es ;
+    rdfs:comment "Annotation, provides for loosely attached information about a resource"@en ,
+                 "Anotación, proporciona información ligeramente asociada a un recurso."@es ;
     rdfs:subClassOf lite:Resource ;
     owl:sameAs oa:Annotation .
 
 lite:Category a rdfs:Class ;
-    rdfs:label "Category"@en ;
-    rdfs:comment "List of things regarded as having particular shared characteristics"@en ;
+    rdfs:label "Category"@en ,
+               "Categoría"@es ;
+    rdfs:comment "List of things regarded as having particular shared characteristics"@en ,
+                 "Lista de cosas consideradas como teniendo ciertas características compartidas."@es ;
     owl:sameAs schema:Enumeration ;
     rdfs:subClassOf lite:Resource .
 
 lite:LanguageCategory a rdfs:Class ;
-    rdfs:label "Language Category"@en ;
-    rdfs:comment "List of languages"@en ;
+    rdfs:label "Language Category"@en ,
+               "Categoría de Idioma"@es ;
+    rdfs:comment "List of languages"@en ,
+                 "Lista de idiomas"@es ;
+    skos:note "A controlled vocabulary."@en ,
+              "Un vocabulario controlado."@es ;
     owl:sameAs bf:Language ;
-    rdfs:subClassOf lite:Category ;
-    skos:note "A controlled vocabulary."@en .
+    rdfs:subClassOf lite:Category .
 
 lite:Form a rdfs:Class ;
-    rdfs:label "Form"@en ;
-    rdfs:comment "Category or genre that describes what the resource is."@en ;
+    rdfs:label "Form"@en ,
+               "Forma"@es ;
+    rdfs:comment "Category or genre that describes what the resource is."@en ,
+                 "Categoría o género que describe qué es el recurso."@es ;
     owl:sameAs bf:GenreForm ;
     rdfs:subClassOf lite:Category .
 
 lite:ProviderEvent a rdfs:Class ;
-    rdfs:label "Provider Event"@en ;
-    rdfs:comment "Event associated with the publication, printing, distribution, issue, release or production of an Instance."@en ;
+    rdfs:label "Provider Event"@en ,
+               "Evento del Proveedor"@es ;
+    rdfs:comment "Event associated with the publication, printing, distribution, issue, release or production of an Instance."@en ,
+                 "Evento asociado con la publicación, impresión, distribución, emisión, lanzamiento o producción de una Instancia."@es ;
     owl:sameAs bf:ProvisionActivity ;
     rdfs:subClassOf lite:Event .
 
 lite:CopyrightEvent a rdfs:Class ;
-    rdfs:label "Copyright Event"@en ;
-    rdfs:comment "Copyright event associated with the intellectual property of an Instance."@en ;
+    rdfs:label "Copyright Event"@en ,
+               "Evento de Derechos de Autor"@es ;
+    rdfs:comment "Copyright event associated with the intellectual property of an Instance."@en ,
+                 "Evento de derechos de autor asociado con la propiedad intelectual de una Instancia."@es ;
     owl:sameAs bf:CopyrightRegistration ;
     rdfs:subClassOf lite:Event .
 
 lite:Event a rdfs:Class ;
-    rdfs:label "Event"@en ;
-    rdfs:comment "Significant occurrence or happening."@en ;
+    rdfs:label "Event"@en ,
+               "Evento"@es ;
+    rdfs:comment "Significant occurrence or happening."@en ,
+                 "Suceso u ocurrencia significativa."@es ;
     owl:sameAs bf:Event , schema:Event ;
     rdfs:subClassOf lite:Resource .
 
 lite:EmploymentEvent a rdfs:Class ;
-	rdfs:label "Employment Event"@en, "EventoEmpleo"@es ;
-	rdfs:comment "Employment event associated with a Person."@en, 
+    rdfs:label "Employment Event"@en ,
+               "EventoEmpleo"@es ;
+    rdfs:comment "Employment event associated with a Person."@en ,
                  "Evento laboral asociado a una Persona."@es ;
     rdfs:subClassOf lite:Event .
 
 lite:Collection a rdfs:Class ;
-    rdfs:label "Collection"@en ;
-    rdfs:comment "Aggregation or gathering of works."@en ;
+    rdfs:label "Collection"@en ,
+               "Colección"@es ;
+    rdfs:comment "Aggregation or gathering of works."@en ,
+                 "Agregación o reunión de obras."@es ;
     owl:sameAs bf:Collection ;
     rdfs:subClassOf lite:Work .
 
 lite:Series a rdfs:Class ;
-    rdfs:label "Series"@en ;
-    rdfs:comment "Set of related resources, especially of a specified kind."@en ;
+    rdfs:label "Series"@en ,
+               "Serie"@es ;
+    rdfs:comment "Set of related resources, especially of a specified kind."@en ,
+                 "Conjunto de recursos relacionados, especialmente de un tipo específico."@es ;
     owl:sameAs schema:CreativeWorkSeries ;
     rdfs:subClassOf lite:Collection .
 
 lite:List a rdfs:Class ;
-    rdfs:label "List"@en ;
-    rdfs:comment "An ordered / unordered group of related resources."@en ;
+    rdfs:label "List"@en ,
+               "Lista"@es ;
+    rdfs:comment "An ordered / unordered group of related resources."@en ,
+                 "Un grupo ordenado o desordenado de recursos relacionados."@es ;
     owl:sameAs schema:ItemList ;
     rdfs:subClassOf lite:Collection .
 
 lite:PostalAddress a rdfs:Class ;
-    rdfs:label "Postal Address"@en ;
+    rdfs:label "Postal Address"@en ,
+               "Dirección Postal"@es ;
+    rdfs:comment "The mailing address."@en ,
+                 "La dirección postal."@es ;
     owl:sameAs schema:PostalAddress ;
-    rdfs:comment "The mailing address."@en ;
     rdfs:subClassOf lite:Resource .
 
 # Resource properties (used by any BUILDE Class)
 
 lite:hasInstance a rdf:Property ;
-    rdfs:label "has instance"@en ;
-    rdfs:comment "Relationship used to connect Works to Instances."@en ;
+    rdfs:label "has instance"@en ,
+               "tiene instancia"@es ;
+    rdfs:comment "Relationship used to connect Works to Instances."@en ,
+                 "Relación utilizada para conectar Obras con Instancias."@es ;
     rdfs:range lite:Instance ;
     rdfs:domain lite:Resource .
 
 lite:audience a rdf:Property ;
-    rdfs:label "audience"@en ;
-    rdfs:comment "Class of user for which the content of a resource is intended, or for whom the content is considered suitable."@en ;
-    skos:note "A target audience can be formed of people of a certain age group, gender, marital status, etc. Other groups, although not the main focus, may also be interested. The value of this property is intended to be a code list."@en ;
+    rdfs:label "audience"@en ,
+               "audiencia"@es ;
+    rdfs:comment "Class of user for which the content of a resource is intended, or for whom the content is considered suitable."@en ,
+                 "Clase de usuario para la cual el contenido de un recurso está destinado, o para quien se considera adecuado."@es ;
+    skos:note "A target audience can be formed of people of a certain age group, gender, marital status, etc. Other groups, although not the main focus, may also be interested. The value of this property is intended to be a code list."@en ,
+              "Una audiencia objetivo puede estar formada por personas de un determinado grupo de edad, género, estado civil, etc. Otros grupos, aunque no sean el enfoque principal, también pueden estar interesados. El valor de esta propiedad está pensado para ser una lista codificada."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:authorityLink a rdf:Property ;
-    rdfs:label "authority link"@en ;
-    rdfs:comment "Actionable IRI linking to an authoritative controlled vocabulary."@en ;
+    rdfs:label "authority link"@en ,
+               "enlace de autoridad"@es ;
+    rdfs:comment "Actionable IRI linking to an authoritative controlled vocabulary."@en ,
+                 "IRI accionable que enlaza a un vocabulario controlado autorizado."@es ;
     rdfs:subPropertyOf lite:link ;
     rdfs:domain lite:Resource .
 
 lite:wikipediaArticle a rdf:Property ;
-    rdfs:label "wikipedia article"@en ;
-    rdfs:comment "Actionable IRI linking to an authoritative Wikipedia article."@en ;
+    rdfs:label "wikipedia article"@en ,
+               "artículo de Wikipedia"@es ;
+    rdfs:comment "Actionable IRI linking to an authoritative Wikipedia article."@en ,
+                 "IRI accionable que enlaza a un artículo autorizado de Wikipedia."@es ;
     rdfs:subPropertyOf lite:link ;
     rdfs:domain lite:Resource .
 
 lite:controlCode a rdf:Property ;
-    rdfs:label "control code"@en ;
-    rdfs:comment "Alphanumeric string or indicator used to find and identify the resource."@en ;
+    rdfs:label "control code"@en ,
+               "código de control"@es ;
+    rdfs:comment "Alphanumeric string or indicator used to find and identify the resource."@en ,
+                 "Cadena alfanumérica o indicador utilizado para encontrar e identificar el recurso."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:date a rdf:Property ;
-    rdfs:label "date"@en ;
-    rdfs:comment "Date associated with the resource."@en ;
+    rdfs:label "date"@en ,
+               "fecha"@es ;
+    rdfs:comment "Date associated with the resource."@en ,
+                 "Fecha asociada con el recurso."@es ;
     owl:equivalentProperty bf:date, dc:date ;
     rdfs:domain lite:Resource .
 
 lite:note a rdf:Property ;
-    rdfs:label "note"@en ;
-    rdfs:comment "Additional descriptive information associated with the resource."@en ;
+    rdfs:label "note"@en ,
+               "nota"@es ;
+    rdfs:comment "Additional descriptive information associated with the resource."@en ,
+                 "Información descriptiva adicional asociada con el recurso."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:description a rdf:Property ;
-    rdfs:label "description"@en ;
-    rdfs:comment "Description of the resource."@en ;
+    rdfs:label "description"@en ,
+               "descripción"@es ;
+    rdfs:comment "Description of the resource."@en ,
+                 "Descripción del recurso."@es ;
     owl:equivalentProperty schema:description, dc:description ;
     rdfs:subPropertyOf lite:note ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:equivalent  a rdf:Property ;
-    rdfs:label "equivalent"@en ;
-    rdfs:comment "actionable IRI linking to a Real World Object."@en ;
+    rdfs:label "equivalent"@en ,
+               "equivalente"@es ;
+    rdfs:comment "actionable IRI linking to a Real World Object."@en ,
+                 "IRI accionable que enlaza a un Objeto del Mundo Real."@es ;
     owl:equivalentProperty schema:sameAs ;
     rdfs:subPropertyOf lite:link ;
     rdfs:domain lite:Resource .
 
 lite:image a rdf:Property ;
-    rdfs:label "image"@en ;
-    rdfs:comment "IRI that points to an image of the resource."@en ;
+    rdfs:label "image"@en ,
+               "imagen"@es ;
+    rdfs:comment "IRI that points to an image of the resource."@en ,
+                 "IRI que apunta a una imagen del recurso."@es ;
     owl:equivalentProperty schema:image ;
     rdfs:domain lite:Resource .
 
 lite:language a rdf:Property ;
-    rdfs:label "language"@en ;
-    rdfs:comment "Language associated with the resource."@en ;
+    rdfs:label "language"@en ,
+               "idioma"@es ;
+    rdfs:comment "Language associated with the resource."@en ,
+                 "Idioma asociado con el recurso."@es ;
     owl:equivalentProperty bf:language, dc:language ;
     rdfs:range lite:LanguageCategory ;
     rdfs:domain lite:Resource .
 
 lite:label a rdf:Property ;
-    rdfs:label "label"@en ;
-    rdfs:comment "Text string representing the name of resource."@en ;
+    rdfs:label "label"@en ,
+               "etiqueta"@es ;
+    rdfs:comment "Text string representing the name of resource."@en ,
+                 "Cadena de texto que representa el nombre del recurso."@es ;
     owl:equivalentProperty schema:name, rdfs:label ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:prefLabel a rdf:Property ;
-    rdfs:label "preferred label"@en ;
-    rdfs:comment "Preferred human readable label of the resource."@en ;
+    rdfs:label "preferred label"@en ,
+               "etiqueta preferida"@es ;
+    rdfs:comment "Preferred human readable label of the resource."@en ,
+                 "Etiqueta preferida legible por humanos del recurso."@es ;
     owl:equivalentProperty skos:prefLabel ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource ;
     rdfs:subPropertyOf lite:label .
 
 lite:link a rdf:Property ;
-    rdfs:label "link"@en ;
-    rdfs:comment "IRI of a resource."@en ;
+    rdfs:label "link"@en ,
+               "enlace"@es ;
+    rdfs:comment "IRI of a resource."@en ,
+                 "IRI de un recurso."@es ;
     owl:equivalentProperty schema:url .
 
 lite:related a rdf:Property ;
-    rdfs:label "related"@en ;
-    rdfs:comment "Resource related to the origin resource."@en ;
+    rdfs:label "related"@en ,
+               "relacionado"@es ;
+    rdfs:comment "Resource related to the origin resource."@en ,
+                 "Recurso relacionado con el recurso de origen."@es ;
     rdfs:range lite:Resource ;
     owl:equivalentProperty dc:related .
 
 lite:rightsStatement a rdf:Property ;
-    rdfs:label "rights statement"@en ;
-    rdfs:comment "Rights statement associated with the origin resource."@en ;
+    rdfs:label "rights statement"@en ,
+               "declaración de derechos"@es ;
+    rdfs:comment "Rights statement associated with the origin resource."@en ,
+                 "Declaración de derechos asociada con el recurso de origen."@es ;
     owl:equivalentProperty dc:rights ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Resource .
 
 lite:createdDate a rdf:Property ;
-    rdfs:label "created date"@en ;
-    rdfs:comment "The date a Resource was created."@en ;
+    rdfs:label "created date"@en ,
+               "fecha de creación"@es ;
+    rdfs:comment "The date a Resource was created."@en ,
+                 "La fecha en que se creó el Recurso."@es ;
     rdfs:subPropertyOf lite:date ;
     rdfs:domain lite:Resource ;
     rdfs:range rdfs:Literal .
 
 lite:updatedDate a rdf:Property ;
-    rdfs:label "updated date"@en ;
-    rdfs:comment "The date a Resource was last updated."@en ;
+    rdfs:label "updated date"@en ,
+               "fecha de actualización"@es ;
+    rdfs:comment "The date a Resource was last updated."@en ,
+                 "La fecha en que el Recurso fue actualizado por última vez."@es ;
     rdfs:subPropertyOf lite:date ;
     rdfs:domain lite:Resource ;
     rdfs:range rdfs:Literal .
 
-# Work properties
 
+# Work properties
 lite:creator a rdf:Property ;
-    rdfs:label "creator"@en ;
-    rdfs:comment "Entity (or entities) responsible with the creation of the origin resource."@en ;
+    rdfs:label "creator"@en ,
+               "creador"@es ;
+    rdfs:comment "Entity (or entities) responsible with the creation of the origin resource."@en ,
+                 "Entidad (o entidades) responsable(s) de la creación del recurso de origen."@es ;
     rdfs:subPropertyOf lite:contributor ;
     owl:equivalentProperty dc:creator , schema:creator ;
     rdfs:range lite:Agent ;
@@ -364,8 +453,10 @@ lite:creator a rdf:Property ;
     ] .
 
 lite:contributor a rdf:Property ;
-    rdfs:label "contributor"@en ;
-    rdfs:comment "Entity (or entities) who contribute to the origin resource."@en ;
+    rdfs:label "contributor"@en ,
+               "colaborador"@es ;
+    rdfs:comment "Entity (or entities) who contribute to the origin resource."@en ,
+                 "Entidad (o entidades) que contribuyen al recurso de origen."@es ;
     rdfs:range lite:Agent ;
     owl:equivalentProperty dc:contributor , schema:contributor ;
     rdfs:domain [
@@ -374,8 +465,10 @@ lite:contributor a rdf:Property ;
     ] .
 
 lite:genre a rdf:Property ;
-    rdfs:label "genre"@en ;
-    rdfs:comment "Category of artistic composition characterized by similarities in form, style, or subject matter."@en ;
+    rdfs:label "genre"@en ,
+               "género"@es ;
+    rdfs:comment "Category of artistic composition characterized by similarities in form, style, or subject matter."@en ,
+                 "Categoría de composición artística caracterizada por similitudes en la forma, el estilo o el tema."@es ;
     rdfs:subPropertyOf lite:Authority ;
     rdfs:range lite:Form ;
     rdfs:domain [
@@ -384,24 +477,30 @@ lite:genre a rdf:Property ;
     ] .
 
 lite:subject a rdf:Property ;
-    rdfs:label "subject"@en ;
-    rdfs:comment "Index term, subject term, subject heading, or descriptor, a term for information retrieval which captures the essence of the topic of a resource."@en ;
+    rdfs:label "subject"@en ,
+               "tema"@es ;
+    rdfs:comment "Index term, subject term, subject heading, or descriptor, a term for information retrieval which captures the essence of the topic of a resource."@en ,
+                 "Término de indización, término de tema, encabezamiento de materia o descriptor, un término para la recuperación de información que captura la esencia del tema de un recurso."@es ;
     rdfs:range lite:Concept ;
     rdfs:domain lite:Work .
 
 lite:title a rdf:Property ;
-    rdfs:label "title"@en ;
+    rdfs:label "title"@en ,
+               "título"@es ;
     rdfs:range rdfs:Literal ;
     owl:equivalentProperty dc:title ;
-    rdfs:comment "Title of the resource."@en ;
+    rdfs:comment "Title of the resource."@en ,
+                 "Título del recurso."@es ;
     rdfs:domain [
         a owl:Class ;
         owl:unionOf (lite:Work lite:Instance)
     ] .
 
 lite:titleAlternative a rdf:Property ;
-    rdfs:label "title alternative"@en ;
-    rdfs:comment "Alternative title of the resource."@en ;
+    rdfs:label "title alternative"@en ,
+               "título alternativo"@es ;
+    rdfs:comment "Alternative title of the resource."@en ,
+                 "Título alternativo del recurso."@es ;
     rdfs:subPropertyOf lite:title ;
     rdfs:domain [
         a owl:Class ;
@@ -409,177 +508,235 @@ lite:titleAlternative a rdf:Property ;
     ] .
 
 lite:isVersionOf a rdf:Property ;
-    rdfs:label "is version of"@en ;
-    rdfs:comment "Work of which this is a version."@en ;
+    rdfs:label "is version of"@en ,
+               "es versión de"@es ;
+    rdfs:comment "Work of which this is a version."@en ,
+                 "Obra de la cual esto es una versión."@es ;
     rdfs:range lite:Work ;
     rdfs:domain lite:Work .
+
 
 # Instance properties
 
 lite:provider a rdf:Property ;
-    rdfs:label "provider"@en ;
+    rdfs:label "provider"@en ,
+               "proveedor"@es ;
     rdfs:range lite:ProviderAgent ;
-    rdfs:comment "Provider associated with the carrier."@en ;
+    rdfs:comment "Provider associated with the carrier."@en ,
+                 "Proveedor asociado con el soporte."@es ;
     rdfs:domain lite:Instance .
 
 lite:copyright a rdf:Property ;
-    rdfs:label "copyright"@en ;
+    rdfs:label "copyright"@en ,
+               "derechos de autor"@es ;
     rdfs:range lite:CopyrightAgent ;
-    rdfs:comment "Copyright event associated with the Instance."@en ;
+    rdfs:comment "Copyright event associated with the Instance."@en ,
+                 "Evento de derechos de autor asociado con la Instancia."@es ;
     rdfs:domain lite:Instance .
 
 lite:format a rdf:Property ;
-    rdfs:label "format"@en ;
+    rdfs:label "format"@en ,
+               "formato"@es ;
     owl:equivalentProperty dc:format , bf:carrier ;
-    rdfs:comment "File format or physical medium of an instance."@en ;
+    rdfs:comment "File format or physical medium of an instance."@en ,
+                 "Formato de archivo o medio físico de una Instancia."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Instance .
 
 lite:medium a rdf:Property ;
-    rdfs:label "medium"@en ;
+    rdfs:label "medium"@en ,
+               "medio"@es ;
     owl:equivalentProperty bf:media ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Medium of the Instance."@en ;
+    rdfs:comment "Medium of the Instance."@en ,
+                 "Medio de la Instancia."@es ;
     rdfs:domain lite:Instance .
 
 lite:extent a rdf:Property ;
-    rdfs:label "extent"@en ;
+    rdfs:label "extent"@en ,
+               "extensión"@es ;
     owl:equivalentProperty bf:extent ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Number of physical pages, volumes, cassettes, total playing time, etc., of of each type of unit."@en ;
+    rdfs:comment "Number of physical pages, volumes, cassettes, total playing time, etc., of each type of unit."@en ,
+                 "Número de páginas físicas, volúmenes, casetes, tiempo total de reproducción, etc., de cada tipo de unidad."@es ;
     rdfs:domain lite:Instance .
 
 lite:dimensions a rdf:Property ;
-    rdfs:label "dimensions"@en ;
-    rdfs:comment "Measurement of size."@en ;
+    rdfs:label "dimensions"@en ,
+               "dimensiones"@es ;
+    rdfs:comment "Measurement of size."@en ,
+                 "Medición del tamaño."@es ;
     owl:equivalentProperty bf:dimensions ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Instance .
 
 lite:instantiates a rdf:Property ;
-    rdfs:label "instantiates"@en ;
-    rdfs:comment "Work the resource instantiates or manifests."@en ;
+    rdfs:label "instantiates"@en ,
+               "instanciado"@es ;
+    rdfs:comment "Work the resource instantiates or manifests."@en ,
+                 "Obra que el recurso instancia o manifiesta."@es ;
     rdfs:range lite:Work ;
     owl:equivalentProperty bf:instanceOf ;
     rdfs:subPropertyOf lite:related ;
     rdfs:domain lite:Instance .
 
+
 ## Item properties
 
 lite:itemizes a rdf:Property ;
-    rdfs:label "itemizes"@en ;
-    rdfs:comment "Instance for which the described Item is an example."@en ;
+    rdfs:label "itemizes"@en ,
+               "itemiza"@es ;
+    rdfs:comment "Instance for which the described Item is an example."@en ,
+                 "Instancia de la cual el Ítem descrito es un ejemplo."@es ;
     owl:equivalentProperty bf:itemOf ;
     rdfs:range rdf:Instance ;
     rdfs:domain lite:Item .
 
 lite:heldBy a rdf:Property ;
-    rdfs:label "held by"@en ;
-    rdfs:comment "Agent holding the item or from which it is available."@en ;
+    rdfs:label "held by"@en ,
+               "mantenido por"@es ;
+    rdfs:comment "Agent holding the item or from which it is available."@en ,
+                 "Agente que posee el ítem o del cual está disponible."@es ;
     owl:equivalentProperty bf:heldBy ;
     rdfs:range rdf:Agent ;
     rdfs:domain lite:Item .
 
+
 ## Authority properties
 
 lite:name a rdf:Property ;
-    rdfs:label "name"@en ;
+    rdfs:label "name"@en ,
+               "nombre"@es ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Name of an authority."@en ;
+    rdfs:comment "Name of an authority."@en ,
+                 "Nombre de una autoridad."@es ;
     rdfs:subPropertyOf lite:label ;
     rdfs:domain lite:Authority .
 
 lite:nameAlternative a rdf:Property ;
-    rdfs:label "alternative name"@en ;
+    rdfs:label "alternative name"@en ,
+               "nombre alternativo"@es ;
     rdfs:range rdfs:Literal ;
     owl:equivalentProperty schema:alternateName ;
-    rdfs:comment "Alias for a resource."@en ;
+    rdfs:comment "Alias for a resource."@en ,
+                 "Alias para un recurso."@es ;
     rdfs:domain lite:Authority .
+
 
 ## Agent properties
 
 lite:email a rdf:Property ;
-    rdfs:label "e-mail address"@en ;
+    rdfs:label "e-mail address"@en ,
+               "dirección de correo electrónico"@es ;
     rdfs:range rdfs:Literal ;
-    rdfs:comment "Address that identifies an email box to which email messages are delivered to an Agent."@en ;
+    rdfs:comment "Address that identifies an email box to which email messages are delivered to an Agent."@en ,
+                 "Dirección que identifica una casilla de correo electrónico a la que se entregan mensajes de correo a un/a Agente."@es ;
     rdfs:domain lite:Agent .
 
 lite:placeAssociated a rdf:Property ;
-    rdfs:label "associated place"@en ;
-    rdfs:comment "The place associated with an Agent."@en ;
+    rdfs:label "associated place"@en ,
+               "lugar asociado"@es ;
+    rdfs:comment "The place associated with an Agent."@en ,
+                 "El lugar asociado con un/a Agente."@es ;
     rdfs:range lite:Place ;
     rdfs:domain lite:Agent .
 
 lite:placeResidence a rdf:Property ;
-    rdfs:label "place of residence"@en ;
-    rdfs:comment "The Agent's place of residence."@en ;
+    rdfs:label "place of residence"@en ,
+               "lugar de residencia"@es ;
+    rdfs:comment "The Agent's place of residence."@en ,
+                 "El lugar de residencia de la o el Agente."@es ;
     rdfs:range lite:Place ;
     rdfs:domain lite:Agent .
 
 lite:address a rdf:Property ;
-    rdfs:label "address"@en ;
-    rdfs:comment "The Agent's physical address."@en ;
+    rdfs:label "address"@en ,
+               "dirección"@es ;
+    rdfs:comment "The Agent's physical address."@en ,
+                 "La dirección física de la o el Agente."@es ;
     rdfs:range lite:PostalAddress ;
     rdfs:domain lite:Agent .
 
+
 ## Person properties
+
 lite:dateBirth a rdf:Property ;
-    rdfs:label "birth date"@en ;
-    rdfs:comment "Birth date associated with the person."@en ;
+    rdfs:label "birth date"@en ,
+               "fecha de nacimiento"@es ;
+    rdfs:comment "Birth date associated with the person."@en ,
+                 "Fecha de nacimiento asociada con la persona."@es ;
     owl:equivalentProperty schema:birthDate ;
     rdfs:subPropertyOf lite:date ;
-    skos:note "Recommended ISO 8601 date."@en ;
+    skos:note "Recommended ISO 8601 date."@en ,
+              "Fecha ISO 8601 recomendada."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Person .
 
 lite:dateDeath a rdf:Property ;
-    rdfs:label "death date"@en ;
-    rdfs:comment "Death date associated with the Person."@en ;
+    rdfs:label "death date"@en ,
+               "fecha de fallecimiento"@es ;
+    rdfs:comment "Death date associated with the Person."@en ,
+                 "Fecha de fallecimiento asociada con la Persona."@es ;
     owl:equivalentProperty schema:deathDate ;
     rdfs:subPropertyOf lite:date ;
-    skos:note "Recommended ISO 8601 date"@en ;
+    skos:note "Recommended ISO 8601 date"@en ,
+              "Fecha ISO 8601 recomendada"@es ;
     rdfs:range rdfs:Literal .
 
 lite:givenName a rdf:Property ;
-    rdfs:label "given name"@en ;
-    rdfs:comment "First name of a Person, also known as forename."@en ;
+    rdfs:label "given name"@en ,
+               "nombre de pila"@es ;
+    rdfs:comment "First name of a Person, also known as forename."@en ,
+                 "Nombre de pila de una Persona, también conocido como nombre propio."@es ;
     owl:equivalentProperty schema:givenName ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Person .
 
 lite:familyName a rdf:Property ;
-    rdfs:label "family name"@en ;
-    rdfs:comment "Last name of a Person, also known as surname."@en ;
+    rdfs:label "family name"@en ,
+               "apellido"@es ;
+    rdfs:comment "Last name of a Person, also known as surname."@en ,
+                 "Apellido de una Persona, también conocido como nombre de familia."@es ;
     owl:equivalentProperty schema:familyName ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Person .
 
 lite:gender a rdf:Property ;
-    rdfs:label "gender"@en ;
-    rdfs:comment "Gender of the Person. While male (M) and female (F) may be used, other text strings are also acceptable for people who do not identify as a binary gender."@en ;
+    rdfs:label "gender"@en ,
+               "género"@es ;
+    rdfs:comment "Gender of the Person. While male (M) and female (F) may be used, other text strings are also acceptable for people who do not identify as a binary gender."@en ,
+                 "Género de la Persona. Aunque se pueden usar masculino (M) y femenino (F), también son aceptables otras cadenas de texto para personas que no se identifican con un género binario."@es ;
     owl:equivalentProperty schema:gender ;
     rdfs:range rdfs:Literal ;
     rdfs:domain lite:Person .
 
 lite:placeBirth a rdf:Property ;
-    rdfs:label "place of birth"@en ;
-    rdfs:comment "The Person's place of birth."@en ;
+    rdfs:label "place of birth"@en ,
+               "lugar de nacimiento"@es ;
+    rdfs:comment "The Person's place of birth."@en ,
+                 "El lugar de nacimiento de la Persona."@es ;
     rdfs:range lite:Place ;
     rdfs:domain lite:Person .
 
 lite:placeDeath a rdf:Property ;
-    rdfs:label "place of death"@en ;
-    rdfs:comment "An Person's place of death."@en ;
+    rdfs:label "place of death"@en ,
+               "lugar de fallecimiento"@es ;
+    rdfs:comment "An Person's place of death."@en ,
+                 "El lugar de fallecimiento de una Persona."@es ;
     rdfs:domain lite:Person ;
     rdfs:range lite:Place .
 
 ## Family, Meeting, and/or Organization related properties
+
 lite:dateStart a rdf:Property ;
-    rdfs:label "start date"@en ;
-    rdfs:comment "Start date associated with a Resource."@en ;
+    rdfs:label "start date"@en ,
+               "fecha de inicio"@es ;
+    rdfs:comment "Start date associated with a Resource."@en ,
+                 "Fecha de inicio asociada con un Recurso."@es ;
     owl:equivalentProperty schema:startDate ;
     rdfs:subPropertyOf lite:date ;
-    skos:note "Recommended ISO 8601 date"@en ;
+    skos:note "Recommended ISO 8601 date"@en ,
+              "Fecha ISO 8601 recomendada"@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain [
         a owl:Class ;
@@ -587,11 +744,14 @@ lite:dateStart a rdf:Property ;
     ] .
 
 lite:dateEnd a rdf:Property ;
-    rdfs:label "end date"@en ;
-    rdfs:comment "End date associated with a Resource."@en ;
+    rdfs:label "end date"@en ,
+               "fecha de finalización"@es ;
+    rdfs:comment "End date associated with a Resource."@en ,
+                 "Fecha de finalización asociada con un Recurso."@es ;
     owl:equivalentProperty schema:endDate ;
     rdfs:subPropertyOf lite:date ;
-    skos:note "Recommended ISO 8601 date."@en ;
+    skos:note "Recommended ISO 8601 date."@en ,
+              "Fecha ISO 8601 recomendada."@es ;
     rdfs:range rdfs:Literal ;
     rdfs:domain [
         a owl:Class ;
@@ -599,54 +759,74 @@ lite:dateEnd a rdf:Property ;
     ] .
 
 lite:subOrganization a rdf:Property ;
-	rdfs:label "sub organization"@en ;
-	rdfs:comment "A relationship between two Organizations where the first includes the second, e.g., as a subsidiary."@en ;
+    rdfs:label "sub organization"@en ,
+               "suborganización"@es ;
+    rdfs:comment "A relationship between two Organizations where the first includes the second, e.g., as a subsidiary."@en ,
+                 "Una relación entre dos Organizaciones donde la primera incluye a la segunda, por ejemplo, como una subsidiaria."@es ;
     rdfs:subPropertyOf lite:related ;
     rdfs:domain lite:Organization ;
     rdfs:range lite:Resource .
 
-## Concept properies
+
+## Concept properties
+
 lite:focus a rdf:Property ;
-    rdfs:label "focus"@en ;
-    rdfs:comment "Underlying or focal entity associated with a Concept."@en ;
+    rdfs:label "focus"@en ,
+               "foco"@es ;
+    rdfs:comment "Underlying or focal entity associated with a Concept."@en ,
+                 "Entidad subyacente o focal asociada con un Concepto."@es ;
     rdfs:domain lite:Concept ;
     rdfs:range lite:Resource .
 
 lite:subFocus a rdf:Property ;
-    rdfs:label "subfocus"@en ;
-    rdfs:comment "Qualifier or modifer used to describe an additional underlying focal entity associated with a Concept."@en ;
+    rdfs:label "subfocus"@en ,
+               "subfoco"@es ;
+    rdfs:comment "Qualifier or modifier used to describe an additional underlying focal entity associated with a Concept."@en ,
+                 "Calificador o modificador utilizado para describir una entidad focal subyacente adicional asociada con un Concepto."@es ;
     rdfs:subPropertyOf lite:focus ;
     rdfs:domain lite:Concept ;
     rdfs:range lite:Resource .
 
+
 ## Event properties
+
 lite:who a rdf:Property ;
-    rdfs:label "who"@en ;
-    rdfs:comment "Person or thing related to an Event."@en ;
+    rdfs:label "who"@en ,
+               "quién"@es ;
+    rdfs:comment "Person or thing related to an Event."@en ,
+                 "Persona o cosa relacionada con un Evento."@es ;
     rdfs:domain lite:Event ;
     rdfs:range lite:Agent .
 
 lite:what a rdf:Property ;
-    rdfs:label "what"@en ;
-    rdfs:comment "Resource related to an Event."@en ;
+    rdfs:label "what"@en ,
+               "qué"@es ;
+    rdfs:comment "Resource related to an Event."@en ,
+                 "Recurso relacionado con un Evento."@es ;
     rdfs:domain lite:Event ;
     rdfs:range lite:Resource .
 
 lite:where a rdf:Property ;
-    rdfs:label "where"@en ;
-    rdfs:comment "Place associated with an Event."@en ;
+    rdfs:label "where"@en ,
+               "dónde"@es ;
+    rdfs:comment "Place associated with an Event."@en ,
+                 "Lugar asociado con un Evento."@es ;
     rdfs:domain lite:Event ;
     rdfs:range lite:Place .
 
 lite:when a rdf:Property ;
-    rdfs:label "when"@en ;
-    rdfs:comment "Date associated with an Event."@en ;
+    rdfs:label "when"@en ,
+               "cuándo"@es ;
+    rdfs:comment "Date associated with an Event."@en ,
+                 "Fecha asociada con un Evento."@es ;
     rdfs:domain lite:Event ;
     rdfs:range rdfs:Literal .
 
 lite:why a rdf:Property ;
-    rdfs:label "why"@en ;
-    rdfs:comment "Concept associated with an Event."@en ;
+    rdfs:label "why"@en ,
+               "por qué"@es ;
+    rdfs:comment "Concept associated with an Event."@en ,
+                 "Concepto asociado con un Evento."@es ;
     rdfs:subPropertyOf lite:Resource ;
     rdfs:domain lite:Event ;
     rdfs:range lite:Concept .
@@ -659,199 +839,250 @@ lite:employment a rdf:Property ;
     rdfs:range lite:EmploymentEvent .
 
 lite:employmentAgent a rdf:Property ;
-	rdfs:label "employment agent"@en , "agente de empleo"@es ;
-	rdfs:comment "Agent associated with an Employment Event."@en , 
+    rdfs:label "employment agent"@en , "agente de empleo"@es ;
+    rdfs:comment "Agent associated with an Employment Event."@en , 
                  "Agente asociado a un Evento de Empleo."@es ;
-	rdfs:domain lite:EmploymentEvent ;
-	rdfs:range lite:Agent .
+    rdfs:domain lite:EmploymentEvent ;
+    rdfs:range lite:Agent .
 
 lite:employmentPlace a rdf:Property ;
-	rdfs:label "employment place"@en , "lugar de empleo"@es ;
-	rdfs:comment "Place associated with the employment of a Person."@en , 
+    rdfs:label "employment place"@en , "lugar de empleo"@es ;
+    rdfs:comment "Place associated with the employment of a Person."@en , 
                  "Lugar asociado al empleo de una Persona."@es ;
-	rdfs:domain lite:EmploymentEvent ;
-	rdfs:range lite:Place .
+    rdfs:domain lite:EmploymentEvent ;
+    rdfs:range lite:Place .
 
 lite:employmentStartDate a rdf:Property ;
-	rdfs:label "employment start date"@en , "fecha de inicio del empleo"@es ;
-	rdfs:comment "Start date associated with the employment of a person."@en , 
+    rdfs:label "employment start date"@en , "fecha de inicio del empleo"@es ;
+    rdfs:comment "Start date associated with the employment of a person."@en , 
                  "Fecha de inicio asociada al empleo de una persona."@es ;
     rdfs:subPropertyOf lite:date ;
-	rdfs:domain lite:EmploymentEvent ;
-	rdfs:range rdfs:Literal .
+    rdfs:domain lite:EmploymentEvent ;
+    rdfs:range rdfs:Literal .
 
 lite:employmentEndDate a rdf:Property ;
-	rdfs:label "employment end date"@en , "fecha de finalización del empleo"@es ;
-	rdfs:comment "End date associated with the employment of a person."@en , 
+    rdfs:label "employment end date"@en , "fecha de finalización del empleo"@es ;
+    rdfs:comment "End date associated with the employment of a person."@en , 
                  "Fecha de finalización asociada al empleo de una persona."@es ;
     rdfs:subPropertyOf lite:date ;
-	rdfs:domain lite:EmploymentEvent ;
-	rdfs:range rdfs:Literal .
+    rdfs:domain lite:EmploymentEvent ;
+    rdfs:range rdfs:Literal .
 
 lite:employmentNote a rdf:Property ;
-	rdfs:label "employment note"@en , "nota de empleo"@es ;
-	rdfs:comment "Note associated with the employment of a person."@en , 
+    rdfs:label "employment note"@en , "nota de empleo"@es ;
+    rdfs:comment "Note associated with the employment of a person."@en , 
                  "Nota asociada al empleo de una persona."@es ;
     rdfs:subPropertyOf lite:note ;
-	rdfs:domain lite:EmploymentEvent ;
-	rdfs:range rdfs:Literal .
+    rdfs:domain lite:EmploymentEvent ;
+    rdfs:range rdfs:Literal .
+
 
 ## CopyrightEvent related properties
 
 lite:license a rdf:Property ;
-    rdfs:label "license"@en ;
-    rdfs:comment "License associated with the rights event associated with a Work."@en ;
+    rdfs:label "license"@en ,
+               "licencia"@es ;
+    rdfs:comment "License associated with the rights event associated with a Work."@en ,
+                 "Licencia asociada con el evento de derechos asociado con una Obra."@es ;
     rdfs:domain lite:CopyrightEvent ;
     rdfs:range lite:Resource .
 
 lite:copyrightAgent a rdf:Property ;
-    rdfs:label "copyright agent"@en ;
-    rdfs:comment "Agent associated with the copyright of an Instance"@en ;
+    rdfs:label "copyright agent"@en ,
+               "agente de derechos de autor"@es ;
+    rdfs:comment "Agent associated with the copyright of an Instance"@en ,
+                 "Agente asociado con los derechos de autor de una Instancia."@es ;
     rdfs:subPropertyOf lite:who ;
     rdfs:domain lite:CopyrightEvent ;
     rdfs:range lite:Agent .
 
 lite:copyrightPlace a rdf:Property ;
-    rdfs:label "copyright place"@en ;
-    rdfs:comment "Place associated with the copyright of an Instance"@en ;
+    rdfs:label "copyright place"@en ,
+               "lugar de derechos de autor"@es ;
+    rdfs:comment "Place associated with the copyright of an Instance"@en ,
+                 "Lugar asociado con los derechos de autor de una Instancia."@es ;
     rdfs:subPropertyOf lite:where ;
     rdfs:domain lite:CopyrightEvent ;
     rdfs:range lite:Place .
 
 lite:copyrightDate a rdf:Property ;
-    rdfs:label "copyright date"@en ;
-    rdfs:comment "Date associated with the copyright of an Instance."@en ;
+    rdfs:label "copyright date"@en ,
+               "fecha de derechos de autor"@es ;
+    rdfs:comment "Date associated with the copyright of an Instance."@en ,
+                 "Fecha asociada con los derechos de autor de una Instancia."@es ;
     rdfs:subPropertyOf lite:date ;
     rdfs:domain lite:CopyrightEvent ;
     rdfs:range rdfs:Literal .
 
 lite:copyrightNote a rdf:Property ;
-    rdfs:label "copyright note"@en ;
-    rdfs:comment "Note associated with the copyright of an Instance."@en ;
+    rdfs:label "copyright note"@en ,
+               "nota de derechos de autor"@es ;
+    rdfs:comment "Note associated with the copyright of an Instance."@en ,
+                 "Nota asociada con los derechos de autor de una Instancia."@es ;
     rdfs:domain lite:CopyrightEvent ;
     rdfs:range rdfs:Literal .
+
 
 ## ProviderEvent properties
 
 lite:providerAgent a rdf:Property ;
-    rdfs:label "provider agent"@en ;
-    rdfs:comment "Agent associated with the publication, printing, distribution, issue, release or production of an Instance."@en ;
+    rdfs:label "provider agent"@en ,
+               "agente del proveedor"@es ;
+    rdfs:comment "Agent associated with the publication, printing, distribution, issue, release or production of an Instance."@en ,
+                 "Agente asociado con la publicación, impresión, distribución, emisión, lanzamiento o producción de una Instancia."@es ;
     rdfs:subPropertyOf lite:who ;
     rdfs:domain lite:ProviderEvent ;
     rdfs:range lite:Agent .
 
 lite:providerPlace a rdf:Property ;
-    rdfs:label "provider place"@en ;
-    rdfs:comment "Place associated with the publication, printing, distribution, issue, release or production of an Instance."@en ;
+    rdfs:label "provider place"@en ,
+               "lugar del proveedor"@es ;
+    rdfs:comment "Place associated with the publication, printing, distribution, issue, release or production of an Instance."@en ,
+                 "Lugar asociado con la publicación, impresión, distribución, emisión, lanzamiento o producción de una Instancia."@es ;
     rdfs:subPropertyOf lite:where ;
     rdfs:domain lite:ProviderEvent ;
     rdfs:range lite:Place .
 
 lite:providerDate a rdf:Property ;
-    rdfs:label "provider date"@en ;
-    rdfs:comment "Date associated with the publication, printing, distribution, issue, release or production of an Instance."@en ;
+    rdfs:label "provider date"@en ,
+               "fecha del proveedor"@es ;
+    rdfs:comment "Date associated with the publication, printing, distribution, issue, release or production of an Instance."@en ,
+                 "Fecha asociada con la publicación, impresión, distribución, emisión, lanzamiento o producción de una Instancia."@es ;
     rdfs:subPropertyOf lite:date ;
     rdfs:domain lite:ProviderEvent ;
     rdfs:range rdfs:Literal .
 
 lite:providerNote a rdf:Property ;
-    rdfs:label "provider note"@en ;
-    rdfs:comment "Note associated with the publication, printing, distribution, issue, release or production of an Instance."@en ;
+    rdfs:label "provider note"@en ,
+               "nota del proveedor"@es ;
+    rdfs:comment "Note associated with the publication, printing, distribution, issue, release or production of an Instance."@en ,
+                 "Nota asociada con la publicación, impresión, distribución, emisión, lanzamiento o producción de una Instancia."@es ;
     rdfs:domain lite:ProviderEvent ;
     rdfs:range rdfs:Literal .
+
 
 ## Annotation properties
 
 lite:body a rdf:Property ;
-    rdfs:label "body"@en ;
-    rdfs:comment "Body of an annotation."@en ;
+    rdfs:label "body"@en ,
+               "cuerpo"@es ;
+    rdfs:comment "Body of an annotation."@en ,
+                 "Cuerpo de una anotación."@es ;
     rdfs:domain lite:Annotation ;
     rdfs:range rdfs:Literal .
 
 lite:target a rdf:Property ;
-    rdfs:label "target"@en ;
-    rdfs:comment "Target of an annotation."@en ;
+    rdfs:label "target"@en ,
+               "objetivo"@es ;
+    rdfs:comment "Target of an annotation."@en ,
+                 "Objetivo de una anotación."@es ;
     rdfs:domain lite:Annotation ;
     rdfs:range rdfs:Resource .
 
 lite:source a rdf:Property ;
-    rdfs:label "source"@en ;
-    rdfs:comment "Provides for loosely attached information about a Resource."@en ;
+    rdfs:label "source"@en ,
+               "fuente"@es ;
+    rdfs:comment "Provides for loosely attached information about a Resource."@en ,
+                 "Proporciona información ligeramente asociada a un Recurso."@es ;
     rdfs:domain lite:Annotation ;
     rdfs:range rdfs:Resource .
+
 
 ## Collection properties
 
 lite:primary a rdf:Property ;
-    rdfs:label "primary work"@en ;
-    rdfs:comment "Primary work associated with a Collection."@en ;
+    rdfs:label "primary work"@en ,
+               "obra primaria"@es ;
+    rdfs:comment "Primary work associated with a Collection."@en ,
+                 "Obra primaria asociada con una Colección."@es ;
     rdfs:domain lite:Collection ;
     rdfs:range rdf:Work .
 
 lite:memberOf a rdf:Property ;
-    rdfs:label "member of"@en ;
-    rdfs:comment "Member of a Collection."@en ;
+    rdfs:label "member of"@en ,
+               "miembro de"@es ;
+    rdfs:comment "Member of a Collection."@en ,
+                 "Miembro de una Colección."@es ;
     rdfs:domain lite:Collection ;
     rdfs:range rdf:Work .
+
 
 ## Used to map resources to Identifiers
 
 lite:map a rdf:Property ;
-    rdfs:label "map"@en ;
-    rdfs:comment "Connects Resources to persistent Identifiers like DOI, ISBN, etc."@en ;
+    rdfs:label "map"@en ,
+               "mapear"@es ;
+    rdfs:comment "Connects Resources to persistent Identifiers like DOI, ISBN, etc."@en ,
+                 "Conecta Recursos con Identificadores persistentes como DOI, ISBN, etc."@es ;
     owl:equivalentProperty schema:postalCode ;
     owl:equivalentProperty librarylink:map ;
     rdfs:domain lite:Resource ;
     rdfs:range lite:Identifier .
 
+
 ## PostalAddress properties
 
 lite:street a rdf:Property ;
-    rdfs:label "street address"@en ;
-    rdfs:comment "The street address."@en ;
+    rdfs:label "street address"@en ,
+               "dirección de la calle"@es ;
+    rdfs:comment "The street address."@en ,
+                 "La dirección de la calle."@es ;
     owl:equivalentProperty schema:streetAddress ;
     rdfs:domain lite:PostalAddress ;
     rdfs:range rdfs:Literal .
 
 lite:city a rdf:Property ;
-    rdfs:label "locality"@en ;
-    rdfs:comment "Incorporated municipality or city, usually governed by a mayor and a board of aldermen or councilmen."@en ;
+    rdfs:label "locality"@en ,
+               "localidad"@es ;
+    rdfs:comment "Incorporated municipality or city, usually governed by a mayor and a board of aldermen or councilmen."@en ,
+                 "Municipio o ciudad incorporada, normalmente gobernada por un alcalde y una junta de concejales."@es ;
     rdfs:domain lite:PostalAddress ;
     owl:equivalentProperty schema:addressLocality ;
     rdfs:range rdfs:Literal .
 
 lite:region a rdf:Property ;
-    rdfs:label "state"@en ;
-    rdfs:comment "Type of polity, state, or region that is an organized political community living under a single system of government."@en ;
+    rdfs:label "state"@en ,
+               "estado"@es ;
+    rdfs:comment "Type of polity, state, or region that is an organized political community living under a single system of government."@en ,
+                 "Tipo de entidad política, estado o región que es una comunidad política organizada que vive bajo un solo sistema de gobierno."@es ;
     owl:equivalentProperty schema:addressRegion ;
     rdfs:domain lite:PostalAddress ;
     rdfs:range rdfs:Literal .
 
 lite:country a rdf:Property ;
-    rdfs:label "country"@en ;
-    rdfs:comment "Nation with its own government, occupying a particular territory."@en ;
+    rdfs:label "country"@en ,
+               "país"@es ;
+    rdfs:comment "Nation with its own government, occupying a particular territory."@en ,
+                 "Nación con su propio gobierno, que ocupa un territorio determinado."@es ;
     owl:equivalentProperty schema:addressCountry ;
     rdfs:domain lite:PostalAddress ;
     rdfs:range rdfs:Literal .
 
 lite:zipcode a rdf:Property ;
-    rdfs:label "zipcode"@en ;
-    rdfs:comment "The postal code."@en ;
+    rdfs:label "zipcode"@en ,
+               "código postal"@es ;
+    rdfs:comment "The postal code."@en ,
+                 "El código postal."@es ;
     owl:equivalentProperty schema:postalCode ;
     rdfs:domain lite:PostalAddress ;
     rdfs:range rdfs:Literal .
 
+
 ## Wikidata properties for Person (added for National Library of Estonia)
 
 lite:hasOccupation a rdf:Property ;
-    rdfs:label "occupation"@en ;
-    rdfs:comment "The main vocation, job, or employment activity of an individual."@en ;
+    rdfs:label "occupation"@en ,
+               "ocupación"@es ;
+    rdfs:comment "The main vocation, job, or employment activity of an individual."@en ,
+                 "La principal vocación, trabajo o actividad laboral de un individuo."@es ;
     owl:equivalentProperty schema:hasOccupation ;
     rdfs:domain lite:Person ;
-    rdfs:range rdfs:Literal  .
+    rdfs:range rdfs:Literal .
 
 lite:education a rdf:Property ;
-    rdfs:label "education"@en ;
-    rdfs:comment "Educational background or the highest level of formal education attained by an individual"@en ;
+    rdfs:label "education"@en ,
+               "educación"@es ;
+    rdfs:comment "Educational background or the highest level of formal education attained by an individual"@en ,
+                 "Formación educativa o el nivel más alto de educación formal alcanzado por un individuo."@es ;
     rdfs:domain lite:Person ;
-    rdfs:range rdfs:Literal  .
+    rdfs:range rdfs:Literal .
